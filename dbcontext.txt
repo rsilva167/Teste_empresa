@@ -1,0 +1,22 @@
+using Microsoft.EntityFrameworkCore;
+
+public class ApplicationDbContext : DbContext
+{
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options)
+    {
+    }
+
+    public DbSet<Produto> Produtos { get; set; }
+    public DbSet<Categoria> Categorias { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<Categoria>()
+            .HasMany(c => c.Produtos)
+            .WithOne(p => p.Categoria)
+            .HasForeignKey(p => p.CategoriaId);
+    }
+}

@@ -1,0 +1,35 @@
+<template>
+  <v-container>
+    <v-form>
+      <v-text-field label="Nome" v-model="product.name" required></v-text-field>
+      <v-textarea label="Descrição" v-model="product.description" required></v-textarea>
+      <v-text-field label="Preço" v-model="product.price" type="number" required></v-text-field>
+      <v-text-field label="Quantidade" v-model="product.quantity" type="number" required></v-text-field>
+      <v-select :items="categories" label="Categoria" v-model="product.category" required></v-select>
+      <v-btn color="primary" @click="saveProduct">Salvar</v-btn>
+      <v-btn @click="cancel">Cancelar</v-btn>
+    </v-form>
+  </v-container>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const product = ref({
+  name: '',
+  description: '',
+  price: 0,
+  quantity: 0,
+  category: '',
+});
+
+const categories = ref(['Categoria 1', 'Categoria 2', 'Categoria 3']);
+
+const saveProduct = () => {
+  // Lógica para salvar produto
+};
+
+const cancel = () => {
+  // Lógica para cancelar
+};
+</script>

@@ -1,0 +1,43 @@
+<template>
+  <v-container>
+    <v-row>
+      <v-col>
+        <v-btn color="primary" @click="addProduct">Adicionar Produto</v-btn>
+      </v-col>
+    </v-row>
+    <v-data-table :headers="headers" :items="products" class="elevation-1">
+      <template #item.actions="{ item }">
+        <v-icon small class="mr-2" @click="editProduct(item)">mdi-pencil</v-icon>
+        <v-icon small @click="deleteProduct(item)">mdi-delete</v-icon>
+      </template>
+    </v-data-table>
+  </v-container>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const headers = [
+  { text: 'Nome', value: 'name' },
+  { text: 'Categoria', value: 'category' },
+  { text: 'Preço', value: 'price' },
+  { text: 'Quantidade', value: 'quantity' },
+  { text: 'Ações', value: 'actions', sortable: false },
+];
+
+const products = ref([
+  // Lista de produtos
+]);
+
+const addProduct = () => {
+  // Navegar para tela de adicionar produto
+};
+
+const editProduct = (item) => {
+  // Navegar para tela de editar produto
+};
+
+const deleteProduct = (item) => {
+  // Lógica para excluir produto
+};
+</script>

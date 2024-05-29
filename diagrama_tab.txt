@@ -1,0 +1,15 @@
+Tabela: Produtos
+---------------------------
+| ID (PK) | int            |
+| Nome    | string         |
+| Descrição | string       |
+| Preço   | decimal        |
+| Quantidade | int         |
+| CategoriaID (FK) | int   |
+---------------------------
+
+Tabela: Categorias
+---------------------------
+| ID (PK) | int            |
+| Nome    | string         |
+---------------------------

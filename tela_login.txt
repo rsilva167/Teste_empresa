@@ -1,0 +1,27 @@
+<template>
+  <v-container class="d-flex align-center justify-center" fill-height>
+    <v-card class="pa-4" max-width="400">
+      <v-card-title class="justify-center">Login</v-card-title>
+      <v-card-text>
+        <v-form>
+          <v-text-field label="Email" v-model="email" type="email" required></v-text-field>
+          <v-text-field label="Senha" v-model="senha" type="password" required></v-text-field>
+        </v-form>
+      </v-card-text>
+      <v-card-actions class="justify-center">
+        <v-btn color="primary" @click="login">Entrar</v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-container>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const email = ref('');
+const senha = ref('');
+
+const login = () => {
+  // Lógica de login
+};
+</script>

@@ -1,0 +1,40 @@
+<template>
+  <v-container>
+    <v-row>
+      <v-col>
+        <v-btn color="primary" @click="addCategory">Adicionar Categoria</v-btn>
+      </v-col>
+    </v-row>
+    <v-data-table :headers="headers" :items="categories" class="elevation-1">
+      <template #item.actions="{ item }">
+        <v-icon small class="mr-2" @click="editCategory(item)">mdi-pencil</v-icon>
+        <v-icon small @click="deleteCategory(item)">mdi-delete</v-icon>
+      </template>
+    </v-data-table>
+  </v-container>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const headers = [
+  { text: 'Nome', value: 'name' },
+  { text: 'Ações', value: 'actions', sortable: false },
+];
+
+const categories = ref([
+  // Lista de categorias
+]);
+
+const addCategory = () => {
+  // Navegar para tela de adicionar categoria
+};
+
+const editCategory = (item) => {
+  // Navegar para tela de editar categoria
+};
+
+const deleteCategory = (item) => {
+  // Lógica para excluir categoria
+};
+</script>
